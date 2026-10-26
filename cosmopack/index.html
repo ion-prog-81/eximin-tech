@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cosmopack Asia 2026 — EXIMIN × SICI AUTO</title>
+  <meta name="description" content="SICI AUTO совместно с EXIMIN приглашает на Cosmopack Asia 2026 в Гонконге: 10–12 ноября, AsiaWorld-Expo, стенд 9-D10.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ===== TOKENS ===== */
+    :root {
+      --green-dark: #35513E;
+      --green-mid:  #758D53;
+      --green-light:#B3CC84;
+      --ivory:      #C5B585;
+      --ivory-bg:   #f5f2ea;
+
+      --bg:       #ffffff;
+      --surface:  #ffffff;
+      --surface2: #f9f8f4;
+      --surface3: #f0ede3;
+      --divider:  #e0ddd3;
+      --border:   #d4d0c4;
+      --text:     #1a2218;
+      --muted:    #5a6352;
+      --faint:    #a0a890;
+      --primary:  #35513E;
+      --primary-h:#2a4031;
+      --primary-hl:#e8f0e9;
+
+      --sh-sm: 0 1px 4px rgba(53,81,62,.10);
+      --sh-md: 0 4px 20px rgba(53,81,62,.12);
+      --sh-lg: 0 12px 48px rgba(53,81,62,.16);
+
+      --font-display: 'Manrope', 'Helvetica Neue', sans-serif;
+      --font-body:    'Inter', 'Helvetica Neue', sans-serif;
+
+      --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+      --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+      --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+      --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+      --text-3xl:  clamp(2.5rem,   1rem    + 4vw,    5rem);
+
+      --space-1:0.25rem; --space-2:0.5rem;  --space-3:0.75rem; --space-4:1rem;
+      --space-5:1.25rem; --space-6:1.5rem;  --space-8:2rem;    --space-10:2.5rem;
+      --space-12:3rem;   --space-16:4rem;   --space-20:5rem;   --space-24:6rem; --space-32:8rem;
+
+      --radius-sm:0.375rem; --radius-md:0.5rem; --radius-lg:0.75rem;
+      --radius-xl:1rem; --radius-2xl:1.5rem; --radius-full:9999px;
+
+      --ease: cubic-bezier(0.16,1,0.3,1);
+    }
+
+    /* ===== BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; scroll-padding-top: 72px; }
+    body { min-height: 100dvh; font-family: var(--font-body); font-size: var(--text-base); color: var(--text); background: var(--bg); line-height: 1.6; }
+    img, picture { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+
+    /* ===== LAYOUT ===== */
+    .container { max-width: 1200px; margin: 0 auto; padding-inline: clamp(1rem, 5vw, 2rem); }
+    .section { padding-block: clamp(4rem, 8vw, 8rem); }
+    .section--tight { padding-block: clamp(3rem, 6vw, 5rem); }
+
+    /* ===== REVEAL ===== */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .rd1 { transition-delay: .08s; }
+    .rd2 { transition-delay: .16s; }
+    .rd3 { transition-delay: .24s; }
+    .rd4 { transition-delay: .32s; }
+
+    /* ===== HEADER ===== */
+    .header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--divider);
+      height: 68px;
+    }
+    .header__inner {
+      height: 68px; display: flex; align-items: center;
+      justify-content: space-between; gap: 1.5rem;
+    }
+    .header__brand {
+      display: flex; align-items: center; gap: 1.25rem; min-width: 0;
+    }
+    .header__logo { height: 34px; width: auto; display: block; }
+    .header__divider {
+      width: 1px; height: 28px; background: var(--divider); flex-shrink: 0;
+    }
+    .header__partner {
+      display: flex; align-items: center;
+    }
+    .header__partner img {
+      height: 28px; width: auto; display: block;
+    }
+    .header__nav {
+      display: flex; align-items: center; gap: 1.5rem; flex-shrink: 0;
+    }
+    .header__nav a {
+      font-size: var(--text-xs); font-weight: 600;
+      color: var(--muted); letter-spacing: .06em;
+      text-transform: uppercase;
+      transition: color 150ms;
+    }
+    .header__nav a:hover { color: var(--primary); }
+    .btn-nav {
+      display: inline-flex; align-items: center;
+      padding: 0.5rem 1.1rem;
+      background: var(--primary); color: #fff !important;
+      border-radius: var(--radius-full);
+      font-size: var(--text-xs); font-weight: 700;
+      letter-spacing: .04em; text-transform: uppercase;
+      transition: background 150ms, transform 150ms;
+    }
+    .btn-nav:hover { background: var(--primary-h); transform: translateY(-1px); color: #fff !important; }
+
+    /* mobile nav toggle */
+    .burger { display: none; flex-direction: column; gap: 5px; padding: 4px; }
+    .burger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: .3s; }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      padding: var(--space-4) var(--space-8);
+      border-radius: var(--radius-lg);
+      font-family: var(--font-body);
+      font-size: var(--text-base); font-weight: 700;
+      transition: background 180ms var(--ease), transform 180ms var(--ease), box-shadow 180ms var(--ease);
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--primary); color: #fff;
+    }
+    .btn-primary:hover {
+      background: var(--primary-h);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(53,81,62,.28);
+    }
+    .btn-outline {
+      border: 1.5px solid var(--border); color: var(--text);
+    }
+    .btn-outline:hover {
+      border-color: var(--primary); color: var(--primary);
+      background: var(--primary-hl);
+    }
+
+    /* ===== BADGES / TAGS ===== */
+    .tag {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-family: var(--font-display);
+      font-size: var(--text-xs); font-weight: 700;
+      text-transform: uppercase; letter-spacing: .1em;
+      color: var(--green-mid);
+      margin-bottom: 0.75rem;
+    }
+    .tag::before {
+      content: ''; display: block; width: 24px; height: 2px;
+      background: var(--green-mid); flex-shrink: 0;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.3rem 0.9rem;
+      background: var(--primary-hl);
+      color: var(--primary); border-radius: var(--radius-full);
+      font-size: var(--text-xs); font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative; overflow: hidden;
+      background: var(--green-dark);
+      padding-block: clamp(5rem, 12vw, 9rem);
+    }
+    /* background photo */
+    .hero__bg {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .hero__bg img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center;
+    }
+    .hero__bg::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(13,20,16,.90) 0%, rgba(13,20,16,.70) 55%, rgba(13,20,16,.40) 100%);
+    }
+    /* remove old pseudo-elements */
+    .hero::before, .hero::after { display: none; }
+    .hero__inner {
+      position: relative; z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2.5rem, 6vw, 5rem);
+      align-items: center;
+    }
+    .hero__content {}
+    .hero__eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--font-display);
+      font-size: var(--text-xs); font-weight: 700;
+      text-transform: uppercase; letter-spacing: .12em;
+      color: var(--green-light);
+      margin-bottom: 1.25rem;
+    }
+    .hero__eyebrow::before {
+      content: ''; display: block; width: 28px; height: 2px;
+      background: var(--green-light);
+    }
+    .hero__title {
+      font-family: var(--font-display);
+      font-size: var(--text-3xl); font-weight: 900;
+      line-height: 1.05; letter-spacing: -.02em;
+      color: #fff; margin-bottom: 1.5rem;
+    }
+    .hero__title em { font-style: normal; color: var(--green-light); }
+    .hero__subtitle {
+      font-size: var(--text-lg); color: rgba(255,255,255,.78);
+      max-width: 520px; line-height: 1.55; margin-bottom: 2.5rem;
+      font-weight: 400;
+    }
+    .hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero .btn-primary { background: var(--green-light); color: var(--green-dark); }
+    .hero .btn-primary:hover { background: #c9e096; box-shadow: 0 8px 24px rgba(179,204,132,.3); }
+    .hero .btn-outline { border-color: rgba(255,255,255,.3); color: rgba(255,255,255,.9); }
+    .hero .btn-outline:hover { border-color: rgba(255,255,255,.7); background: rgba(255,255,255,.08); }
+
+    /* hero stats */
+    .hero__stats {
+      display: flex; gap: 2rem; margin-top: 2.5rem;
+      padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.12);
+    }
+    .hero__stat strong {
+      display: block; font-family: var(--font-display);
+      font-size: var(--text-xl); font-weight: 900; color: var(--green-light);
+      line-height: 1;
+    }
+    .hero__stat span { font-size: var(--text-xs); color: rgba(255,255,255,.55); margin-top: 0.3rem; display: block; }
+
+    /* hero visual card */
+    .hero__visual {
+      display: flex; flex-direction: column; gap: 1rem;
+    }
+    .expo-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(179,204,132,.2);
+      border-radius: var(--radius-2xl);
+      padding: 2rem;
+      backdrop-filter: blur(8px);
+    }
+    .expo-card__label {
+      font-size: var(--text-xs); font-weight: 700;
+      text-transform: uppercase; letter-spacing: .12em;
+      color: rgba(255,255,255,.45); margin-bottom: 0.75rem;
+    }
+    .expo-card__name {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl); font-weight: 900;
+      color: #fff; line-height: 1.05; letter-spacing: -.02em;
+      margin-bottom: 0.5rem;
+    }
+    .expo-card__name span { color: var(--green-light); }
+    .expo-card__sub {
+      font-size: var(--text-sm); color: rgba(255,255,255,.55);
+    }
+    .expo-card__stand {
+      margin-top: 1.5rem; padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,.1);
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .stand-badge {
+      font-family: var(--font-display); font-weight: 900;
+      font-size: 1.75rem; color: var(--green-light); line-height: 1;
+    }
+    .stand-desc { font-size: var(--text-xs); color: rgba(255,255,255,.5); line-height: 1.4; }
+
+    .gift-card {
+      background: var(--green-light);
+      border-radius: var(--radius-xl);
+      padding: 1rem 1.25rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .gift-card__icon {
+      width: 36px; height: 36px; flex-shrink: 0;
+      background: rgba(53,81,62,.15);
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .gift-card strong { font-family: var(--font-display); font-weight: 800; font-size: var(--text-sm); color: var(--green-dark); }
+    .gift-card span { font-size: var(--text-xs); color: var(--green-mid); display: block; margin-top: 0.2rem; }
+
+    /* ===== SECTION HEADER ===== */
+    .section-head { max-width: 720px; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+    .section-head--center { margin-inline: auto; text-align: center; }
+    .section-head--center .tag { justify-content: center; }
+    .section-head--center .tag::before { display: none; }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl); font-weight: 800;
+      line-height: 1.1; letter-spacing: -.02em;
+      color: var(--text); margin-bottom: 1rem;
+    }
+    .section-lead { font-size: var(--text-lg); color: var(--muted); line-height: 1.6; }
+
+    /* ===== CARDS GRID ===== */
+    .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-xl); padding: 2rem;
+      transition: box-shadow 200ms var(--ease), transform 200ms var(--ease), border-color 200ms;
+    }
+    .card:hover { box-shadow: var(--sh-md); transform: translateY(-3px); border-color: var(--green-mid); }
+
+    .card--accent {
+      background: var(--green-dark); border-color: var(--green-dark);
+    }
+    .card--accent h3, .card--accent p { color: rgba(255,255,255,.9); }
+    .card--accent p { color: rgba(255,255,255,.65); }
+    .card--accent .card-icon { background: rgba(179,204,132,.15); color: var(--green-light); }
+    /* soft accent — lighter version */
+    .card--accent-soft {
+      background: var(--primary-hl); border-color: rgba(53,81,62,.15);
+    }
+    .card--accent-soft h3 { color: var(--green-dark); }
+    .card--accent-soft p { color: var(--muted); }
+
+    .card-icon {
+      width: 48px; height: 48px;
+      background: var(--primary-hl);
+      color: var(--primary);
+      border-radius: var(--radius-lg);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .card h3 {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: 1.125rem; color: var(--text);
+      margin-bottom: 0.625rem; line-height: 1.25;
+    }
+    .card p { font-size: var(--text-sm); color: var(--muted); line-height: 1.6; }
+
+    /* ===== FACTORY SPLIT ===== */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: clamp(3rem, 7vw, 6rem);
+      align-items: center;
+    }
+    .factory-visual {
+      border-radius: var(--radius-2xl);
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      position: relative;
+    }
+    .factory-visual img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center;
+      display: block;
+    }
+    .factory-visual::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, transparent 40%, rgba(249,248,244,.55) 100%);
+      pointer-events: none;
+    }
+
+    /* checklist */
+    .checklist { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; }
+    .check-item { display: flex; gap: 1rem; align-items: flex-start; }
+    .check-mark {
+      width: 24px; height: 24px; flex-shrink: 0; margin-top: 0.1rem;
+      background: var(--primary-hl);
+      color: var(--primary); border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 0.75rem;
+    }
+    .check-item p { font-size: var(--text-sm); color: var(--muted); line-height: 1.6; }
+    .check-item b { color: var(--text); }
+
+    /* ===== PROGRAM ===== */
+    .program { background: var(--surface2); border-radius: var(--radius-2xl); border: 1px solid var(--border); overflow: hidden; }
+    .program-item {
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--divider);
+      display: grid; grid-template-columns: 2.5rem 1fr;
+      gap: 1.25rem; align-items: start;
+      transition: background 150ms;
+    }
+    .program-item:last-child { border-bottom: none; }
+    .program-item:hover { background: var(--surface3); }
+    .program-num {
+      width: 2.5rem; height: 2.5rem; flex-shrink: 0;
+      background: var(--primary-hl); color: var(--primary);
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-weight: 800; font-size: 0.9rem;
+    }
+    .program-item h3 {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: 1rem; color: var(--text); margin-bottom: 0.35rem;
+    }
+    .program-item p { font-size: var(--text-sm); color: var(--muted); line-height: 1.6; }
+
+    .notice {
+      background: var(--ivory-bg);
+      border: 1px solid var(--ivory);
+      border-radius: var(--radius-lg);
+      padding: 1.125rem 1.5rem;
+      font-size: var(--text-sm); color: var(--muted);
+      margin-top: 1.5rem; line-height: 1.6;
+    }
+    .notice b { color: var(--text); }
+
+    /* ===== PROGRAM BLOCKS ===== */
+    .prog-block {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--divider);
+    }
+    .prog-block:last-of-type { border-bottom: none; }
+    .prog-date {
+      font-family: var(--font-display); font-weight: 900;
+      font-size: var(--text-xl); color: var(--primary);
+      line-height: 1.1; padding-top: 0.2rem;
+    }
+    .prog-content h3 {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: 1.125rem; color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+    .prog-content p {
+      font-size: var(--text-sm); color: var(--muted);
+      line-height: 1.7; margin-bottom: 0.75rem;
+    }
+    .prog-content p:last-child { margin-bottom: 0; }
+    .prog-highlight {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--primary-hl); color: var(--primary);
+      border-radius: var(--radius-lg); padding: 0.6rem 1rem;
+      font-size: var(--text-sm); font-weight: 600;
+      margin-top: 0.75rem;
+    }
+    .prog-highlight::before { content: '🎁'; font-size: 0.9rem; }
+
+    .prog-divider {
+      margin: 1.5rem 0;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .prog-divider::before, .prog-divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--divider);
+    }
+    .prog-divider span {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: var(--text-sm); color: var(--muted);
+      white-space: nowrap; padding: 0 0.5rem;
+    }
+
+    /* timeline inside prog-block */
+    .prog-timeline { display: flex; flex-direction: column; gap: 0; }
+    .pt-item {
+      display: grid; grid-template-columns: 100px 1fr;
+      gap: 1.5rem; padding: 1.5rem 0;
+      border-left: 2px solid var(--divider);
+      margin-left: 0; padding-left: 0;
+      position: relative;
+    }
+    .pt-item::before {
+      content: ''; position: absolute;
+      left: -6px; top: 1.75rem;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--primary); border: 2px solid var(--surface2);
+    }
+    .pt-item--last { border-left: 2px solid transparent; }
+    .pt-time {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: var(--text-xs); color: var(--primary);
+      text-transform: uppercase; letter-spacing: .06em;
+      padding-top: 0.2rem; padding-left: 1.25rem;
+    }
+    .pt-body h4 {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: 1rem; color: var(--text); margin-bottom: 0.5rem;
+    }
+    .pt-body p {
+      font-size: var(--text-sm); color: var(--muted);
+      line-height: 1.7; margin-bottom: 0.5rem;
+    }
+    .pt-list {
+      padding-left: 1.25rem; margin: 0.5rem 0;
+      display: flex; flex-direction: column; gap: 0.35rem;
+    }
+    .pt-list li {
+      font-size: var(--text-sm); color: var(--muted); line-height: 1.6;
+    }
+
+    /* ===== INFO GRID ===== */
+    .proya-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: clamp(2rem, 6vw, 4rem);
+      align-items: start;
+    }
+    .proya-facts { display: flex; flex-direction: column; gap: 1rem; }
+    .fact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+    }
+    .fact-label {
+      font-size: var(--text-xs); font-weight: 700;
+      text-transform: uppercase; letter-spacing: .08em;
+      color: var(--faint); margin-bottom: 0.35rem;
+    }
+    .fact-val {
+      font-family: var(--font-display); font-weight: 900;
+      font-size: var(--text-xl); color: var(--primary); line-height: 1;
+    }
+    .fact-sub {
+      font-size: var(--text-xs); color: var(--muted); margin-top: 0.25rem;
+    }
+    /* breakdown bars */
+    .fact-breakdown { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 0.5rem; }
+    .fb-item { display: flex; flex-direction: column; gap: 0.25rem; }
+    .fb-item span { font-size: 0.72rem; color: var(--muted); }
+    .fb-bar {
+      height: 6px; border-radius: 4px;
+      background: var(--primary); opacity: .8;
+    }
+    .fb-bar--2 { background: var(--green-mid); opacity: .7; }
+    .fb-bar--3 { background: var(--ivory); opacity: .9; }
+    .proya-link {
+      display: inline-flex; align-items: center;
+      font-size: var(--text-sm); font-weight: 600;
+      color: var(--primary);
+      padding: 0.6rem 0;
+      border-bottom: 1.5px solid var(--primary);
+      transition: opacity 150ms;
+    }
+    .proya-link:hover { opacity: .7; }
+
+    @media (max-width: 900px) {
+      .prog-block { grid-template-columns: 1fr; gap: 0.75rem; }
+      .prog-date { font-size: var(--text-lg); }
+      .pt-item { grid-template-columns: 80px 1fr; }
+      .proya-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ===== FORM SECTION ===== */
+    .form-section {
+      background: var(--surface2);
+      border-top: 1px solid var(--divider);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: clamp(3rem, 7vw, 6rem);
+      align-items: start;
+    }
+    .form-info { padding-top: 1rem; }
+    .form-info h2 {
+      font-family: var(--font-display); font-weight: 800;
+      font-size: var(--text-2xl); line-height: 1.1; letter-spacing: -.02em;
+      color: var(--text); margin-block: 1rem 1.25rem;
+    }
+    .form-info p { font-size: var(--text-sm); color: var(--muted); line-height: 1.7; margin-bottom: 0.75rem; }
+
+    .form-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-2xl);
+      padding: clamp(1.5rem, 4vw, 2.25rem);
+      box-shadow: var(--sh-sm);
+    }
+    .form-card form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-card label {
+      display: flex; flex-direction: column; gap: 0.4rem;
+      font-size: var(--text-xs); font-weight: 600;
+      color: var(--text); letter-spacing: .02em;
+    }
+    .form-card input,
+    .form-card textarea {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: var(--text);
+      background: var(--surface2);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.75rem 1rem;
+      outline: none;
+      transition: border-color 150ms, box-shadow 150ms;
+      resize: vertical;
+    }
+    .form-card input:focus,
+    .form-card textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(53,81,62,.12);
+      background: var(--surface);
+    }
+    .form-card textarea { min-height: 100px; }
+    .form-note {
+      font-size: 0.75rem; color: var(--faint);
+      line-height: 1.55; padding: 0.75rem 1rem;
+      background: var(--surface2); border-radius: var(--radius-md);
+      border: 1px solid var(--divider);
+    }
+    .form-card .btn { width: 100%; justify-content: center; }
+
+    /* checkbox */
+    .checkbox-label {
+      display: flex !important; flex-direction: row !important;
+      align-items: flex-start; gap: 0.625rem;
+      cursor: pointer;
+    }
+    .checkbox-label input[type="checkbox"] {
+      width: 18px; height: 18px; min-width: 18px;
+      margin-top: 0.15rem;
+      accent-color: var(--primary);
+      cursor: pointer;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--surface2);
+    }
+    .checkbox-label span {
+      font-size: var(--text-xs); color: var(--muted); line-height: 1.55;
+      font-weight: 400;
+    }
+    /* success message */
+    .form-success {
+      display: none;
+      padding: 1.5rem;
+      background: var(--primary-hl);
+      border: 1px solid rgba(53,81,62,.2);
+      border-radius: var(--radius-lg);
+      text-align: center;
+    }
+    .form-success.visible { display: block; }
+    .form-success strong { font-family: var(--font-display); font-weight: 700; color: var(--primary); display: block; margin-bottom: 0.4rem; }
+    .form-success span { font-size: var(--text-sm); color: var(--muted); }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--green-dark);
+      color: rgba(255,255,255,.8);
+      padding-block: 2.5rem;
+    }
+    .footer__inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1.5rem; flex-wrap: wrap;
+    }
+    .footer__logo { height: 26px; width: auto; filter: brightness(0) invert(1); opacity: .85; }
+    .footer__text { font-size: var(--text-xs); opacity: .7; }
+    .footer__links { display: flex; gap: 1.5rem; align-items: center; }
+    .footer__links a { font-size: var(--text-xs); color: rgba(255,255,255,.55); transition: color 150ms; }
+    .footer__links a:hover { color: #fff; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .hero__inner { grid-template-columns: 1fr; }
+      .hero__visual { display: none; }
+      .cards-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .split { grid-template-columns: 1fr; }
+      .factory-visual { display: none; }
+      .form-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    @media (max-width: 640px) {
+      .header__nav .nav-links { display: none; }
+      .burger { display: flex; }
+      .header__nav.open .nav-links {
+        display: flex; flex-direction: column; position: fixed;
+        inset: 68px 0 0; background: var(--surface);
+        padding: 2rem; gap: 1.5rem; z-index: 99;
+        border-top: 1px solid var(--divider);
+      }
+      .header__nav.open .nav-links a {
+        font-size: 1.1rem;
+      }
+      .hero__stats { flex-direction: column; gap: 1.25rem; }
+      .footer__inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="container header__inner">
+    <div class="header__brand">
+      <!-- EXIMIN SVG logo (inline, from brand) -->
+      <img class="header__logo" src="assets/eximin-logo.svg" alt="EXIMIN" loading="eager">
+      <div class="header__divider"></div>
+      <div class="header__partner"><img src="assets/sici-logo.jpg" alt="SICI AUTO" loading="eager"></div>
+    </div>
+    <nav class="header__nav" id="main-nav" aria-label="Навигация">
+      <div class="nav-links" style="display:flex;align-items:center;gap:1.5rem;">
+        <a href="#stand">Стенд</a>
+        <a href="#program">Программа</a>
+        <a class="btn-nav" href="#register">Зарегистрироваться</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="stand">
+  <div class="hero__bg"><img src="assets/sici-booth.jpg" alt="SICI AUTO на Cosmopack Asia 2026" loading="eager"></div>
+  <div class="container hero__inner">
+    <div class="hero__content reveal">
+      <div class="hero__eyebrow">Cosmopack Asia · Hong Kong · Стенд 9-D10</div>
+      <h1 class="hero__title">Встретимся на <em>Cosmopack Asia</em> в Гонконге</h1>
+      <p class="hero__subtitle">SICI AUTO совместно с EXIMIN приглашает на стенд 9-D10 в AsiaWorld-Expo — посмотреть линии розлива, упаковки и конца линии и обсудить задачу вашего производства.</p>
+      <div class="hero__actions">
+        <a class="btn btn-primary" href="#register">Получить приглашение</a>
+      </div>
+    </div>
+    <div class="hero__visual reveal rd2">
+      <div class="expo-card">
+        <div class="expo-card__label">Visit us at</div>
+        <div class="expo-card__name">COSMOPACK<br><span>ASIA</span><br>2026</div>
+        <div class="expo-card__sub">Hong Kong · 10–12 November 2026</div>
+        <div class="expo-card__stand">
+          <div>
+            <div class="stand-badge">9-D10</div>
+          </div>
+          <div class="stand-desc">Стенд SICI AUTO<br>Hall 9, AsiaWorld-Expo</div>
+        </div>
+      </div>
+      <div class="gift-card">
+        <div class="gift-card__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+        </div>
+        <div>
+          <strong>Подарок на стенде</strong>
+          <span>для каждого гостя, прошедшего регистрацию заранее</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT AT STAND ===== -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <div class="tag">Что на стенде</div>
+      <h2 class="section-title">Оборудование, инженеры и расчёт под вашу задачу</h2>
+    </div>
+    <div class="cards-grid">
+      <div class="card reveal rd1">
+        <div class="card-icon">
+          <svg width="22" height="22" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M10 54h44V25L41 34V17h-8v17L21 25v9l-11-7v27Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Живое оборудование</h3>
+        <p>Линии розлива, укупорки, этикетировки, картонажа и кейс-пакинга: узлы, скорость, компоновка.</p>
+      </div>
+      <div class="card card--accent-soft reveal rd2">
+        <div class="card-icon" style="background:var(--primary-hl);color:var(--primary);">
+          <svg width="22" height="22" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M13 52h38M18 52V20h28v32M24 29h5M35 29h5M24 39h5M35 39h5" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M24 12h16" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Инженеры SICI</h3>
+        <p>Прямой разговор с производителем: конфигурация, производительность, ограничения и сроки.</p>
+      </div>
+      <div class="card reveal rd3">
+        <div class="card-icon">
+          <svg width="22" height="22" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M8 43h48v11H8V43Z" stroke="currentColor" stroke-width="4"/><circle cx="18" cy="48.5" r="3" stroke="currentColor" stroke-width="4"/><circle cx="32" cy="48.5" r="3" stroke="currentColor" stroke-width="4"/><circle cx="46" cy="48.5" r="3" stroke="currentColor" stroke-width="4"/><path d="M14 30h13v13H14V30ZM37 24h13v19H37V24Z" stroke="currentColor" stroke-width="4"/></svg>
+        </div>
+        <h3>Расчёт под ваш продукт</h3>
+        <p>Прикидка комплектации и бюджета под ваш продукт, тару и объём — без посредников.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROGRAM ===== -->
+<section class="section" id="program" style="background:var(--surface2);border-top:1px solid var(--divider);border-bottom:1px solid var(--divider);">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="tag">Программа</div>
+      <h2 class="section-title">SICI AUTO на Cosmopack Asia 2026</h2>
+    </div>
+
+    <div class="prog-block reveal rd1">
+      <div class="prog-date">10–12 ноября</div>
+      <div class="prog-content">
+        <h3>Cosmopack Asia · стенд 9-D10</h3>
+        <p>Встречаемся в AsiaWorld-Expo (AWE), Гонконг, на стенде SICI AUTO — <b>9-D10, Hall 9</b>.</p>
+        <p>На стенде — оборудование для розлива, укупорки, этикетировки, картонажа и упаковки конца линии. Можно обсудить задачи вашего производства и подобрать формат дальнейшей работы.</p>
+        <div class="prog-highlight">Каждому, кто зарегистрируется заранее, — подарок на стенде.</div>
+      </div>
+    </div>
+
+    <div class="prog-divider reveal">
+      <span>После выставки — по запросу</span>
+    </div>
+
+    <div class="prog-block reveal rd1">
+      <div class="prog-date">по запросу</div>
+      <div class="prog-content">
+        <p style="margin-bottom:1.5rem;">Для зарегистрированных гостей можем организовать визит на завод SICI AUTO в Уси (провинция Цзянсу) — увидеть производство и оборудование в работе. Участие — после подтверждения с нашей стороны, количество мест ограничено.</p>
+        <div class="prog-timeline">
+          <div class="pt-item">
+            <div class="pt-time">Завод</div>
+            <div class="pt-body">
+              <h4>SICI AUTO · Wuxi</h4>
+              <p>Осмотр производственных мощностей, знакомство с оборудованием и техническими решениями, обсуждение задач участников с инженерами.</p>
+            </div>
+          </div>
+        </div>
+        <div class="prog-highlight">Визит возможен только по предварительной регистрации и подтверждению.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FORM ===== -->
+<section class="form-section section" id="register">
+  <div class="container form-grid">
+    <div class="form-info reveal">
+      <span class="badge">Регистрация</span>
+      <h2>Получите приглашение и детали участия</h2>
+      <p>Оставьте ваши контакты и напишите, какое оборудование вас интересует.</p>
+      <p>После получения заявки мы уточним детали и формат участия.</p>
+      <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--divider);">
+        <p style="font-size:var(--text-xs);color:var(--faint);margin-bottom:0.5rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;">Контакты EXIMIN</p>
+        <p style="font-size:var(--text-sm);color:var(--muted);">Москва: <a href="tel:+74952336655" style="color:var(--primary);">+7 495 233-66-55</a></p>
+        <p style="font-size:var(--text-sm);color:var(--muted);">Пекин: <a href="tel:+8618610380198" style="color:var(--primary);">+86 186 1038 0198</a></p>
+        <p style="font-size:var(--text-sm);color:var(--muted);margin-top:0.25rem;"><a href="mailto:industry@eximin.ru" style="color:var(--primary);">industry@eximin.ru</a></p>
+      </div>
+    </div>
+    <div class="form-card reveal rd2">
+      <form id="reg-form">
+        <input type="hidden" name="access_key" value="5e105f9f-05a3-44aa-a539-7a36837a98fc">
+        <input type="hidden" name="subject" value="Регистрация на Cosmopack Asia 2026">
+        <input type="hidden" name="from_name" value="CBE.eximin.tech">
+        <input type="hidden" name="replyto" id="replyto-field" value="">
+        <input type="checkbox" name="botcheck" style="display:none;">
+        <label>
+          ФИО
+          <input type="text" name="name" placeholder="Иванов Иван Иванович" required>
+        </label>
+        <label>
+          E-mail
+          <input type="email" name="email" placeholder="name@company.com" required>
+        </label>
+        <label>
+          Название компании
+          <input type="text" name="company" placeholder="Название вашей компании" required>
+        </label>
+        <label>
+          Телефон
+          <input type="tel" name="phone" placeholder="+7 / +86 / другой номер" required>
+        </label>
+        <label>
+          Комментарий
+          <textarea name="comment" placeholder="Какие решения интересуют?
+фасовка, индивидуальная упаковка, маркировка, упаковка в картон, автоматизация производства ...."></textarea>
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" name="consent" id="consent" required>
+          <span>Я соглашаюсь на обработку моих персональных данных в целях рассмотрения обращения и обратной связи</span>
+        </label>
+        <button class="btn btn-primary" type="submit">Зарегистрироваться</button>
+      </form>
+      <div class="form-success" id="form-success">
+        <strong>Заявка отправлена</strong>
+        <span>Заявка отправлена на industry@eximin.ru. Мы свяжемся с вами в ближайшее время.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <img class="footer__logo" src="assets/eximin-logo.svg" alt="EXIMIN" loading="lazy">
+    <p class="footer__text">ООО «Эксимин» — официальный представитель SICI AUTO и Kingshang в РФ</p>
+    <div class="footer__links">
+      <a href="https://eximin.tech" target="_blank" rel="noopener">eximin.tech</a>
+      <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener">Created with Perplexity Computer</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Form submit -> Web3Forms
+  const form = document.getElementById('reg-form');
+  if (form) {
+    // sync email to replyto hidden field
+    const emailInput = form.querySelector('input[name="email"]');
+    if (emailInput) {
+      emailInput.addEventListener('input', () => {
+        document.getElementById('replyto-field').value = emailInput.value;
+      });
+    }
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      // sync replyto
+      if (emailInput) document.getElementById('replyto-field').value = emailInput.value;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Отправка...';
+
+      const data = new FormData(form);
+      // remove botcheck from send if unchecked (anti-spam)
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: data
+        });
+        const json = await res.json();
+
+        if (json.success) {
+          form.style.display = 'none';
+          document.getElementById('form-success').classList.add('visible');
+        } else {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Зарегистрироваться';
+          alert('Ошибка отправки: ' + (json.message || 'попробуйте ещё раз'));
+        }
+      } catch(err) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Зарегистрироваться';
+        alert('Ошибка сети. Проверьте подключение и попробуйте ещё раз.');
+      }
+    });
+  }
+
+  // Reveal on scroll
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+  }, { threshold: .08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Mobile burger
+  const burger = document.getElementById('burger');
+  const nav = document.getElementById('main-nav');
+  if (burger) {
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+  }
+</script>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="transform:translate(-${scrollX}px,-${scrollY}px);transform-origin:top left">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body>
+</html>
